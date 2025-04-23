@@ -164,7 +164,8 @@ const HomePage = () => {
 
     return (
         <div>
-            <div className='w-[1440px] m-auto'>
+<div className='max-w-screen-xl w-full mx-auto m-auto px-4'>
+
                 <br />
                 <br />
                 <br />

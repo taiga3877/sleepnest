@@ -116,7 +116,7 @@ const Header = () => {
           </ul>
 
           <div className='flex justify-between items-center mt-4'>
-            <Link to="/likepage" className="text-2xl text-[#c60000c4]">
+            <Link to={'/likepage'} className="text-2xl text-[#c60000c4]">
               <MdFavorite />
             </Link>
 
