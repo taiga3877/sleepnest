@@ -10,6 +10,7 @@ const Header = () => {
   const { likedItems } = useLikeStore();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div className='fixed top-0 w-full z-50 bg-white shadow-lg'>
@@ -21,59 +22,47 @@ const Header = () => {
         {/* Desktop Menu */}
         <div className='hidden lg:flex items-center gap-[30px]'>
           <ul className='flex items-center gap-[40px] text-lg'>
-            <li className='flex items-center gap-[40px]'>
-              <Link
-                to={'/'}
-                className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-              >
+            <li>
+              <Link to="/" className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group">
                 Home
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
               </Link>
-              <Link
-                to={'/collectionpage'}
-                className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-              >
+            </li>
+            <li>
+              <Link to="/collectionpage" className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group">
                 Collection
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
               </Link>
-              <Link
-                to={'/aboutuspage'}
-                className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-              >
+            </li>
+            <li>
+              <Link to="/aboutuspage" className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group">
                 About Us
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
               </Link>
-              <Link
-                to={'/contactpage'}
-                className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-              >
+            </li>
+            <li>
+              <Link to="/contactpage" className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group">
                 Contacts
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           </ul>
+
           <Link to="/likepage" className="relative group">
             <span className="text-3xl text-red-500 group-hover:scale-110 transition-transform duration-200 ease-in-out">
               <MdFavorite />
             </span>
-
             {likedItems.length > 0 && (
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md animate-pulse">
                 {likedItems.length}
               </span>
             )}
           </Link>
-
-          {/* <select className="w-24 p-2 rounded-xl shadow-md border border-gray-300 bg-[#A17F4A] text-white focus:outline-none focus:ring-2 focus:ring-[#A17F4A] cursor-pointer">
-            <option value="End">Eng</option>
-            <option value="Ru">Ru</option>
-            <option value="Uz">Uz</option>
-          </select> */}
         </div>
 
         {/* Burger Icon */}
         <div className='lg:hidden'>
-          <button onClick={toggleMenu} className="text-3xl text-[#A17F4A]">
+          <button onClick={toggleMenu} className="text-3xl text-[#A17F4A]" aria-label="Toggle menu">
             {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
           </button>
         </div>
@@ -83,48 +72,29 @@ const Header = () => {
       {menuOpen && (
         <div className='lg:hidden bg-white px-4 py-4 shadow-md'>
           <ul className='flex flex-col gap-4 text-lg font-medium'>
-
-            <Link
-              to={'/'}
-              className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-            >
-              Home
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              to={'/collectionpage'}
-              className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-            >
-              Collection
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              to={'/aboutuspage'}
-              className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-            >
-              About Us
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              to={'/contactpage'}
-              className="relative text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300 group"
-            >
-              Contacts
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#A17F4A] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-
+            <li>
+              <Link to="/" onClick={closeMenu} className="text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300">Home</Link>
+            </li>
+            <li>
+              <Link to="/collectionpage" onClick={closeMenu} className="text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300">Collection</Link>
+            </li>
+            <li>
+              <Link to="/aboutuspage" onClick={closeMenu} className="text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300">About Us</Link>
+            </li>
+            <li>
+              <Link to="/contactpage" onClick={closeMenu} className="text-gray-700 font-semibold hover:text-[#A17F4A] transition duration-300">Contacts</Link>
+            </li>
           </ul>
 
-          <div className='flex justify-between items-center mt-4'>
-            <Link to={'/likepage'} className="text-2xl text-[#c60000c4]">
+          <div className='flex items-center justify-end mt-4 relative'>
+            <Link to="/likepage" onClick={closeMenu} className="text-3xl text-red-500 relative">
               <MdFavorite />
+              {likedItems.length > 0 && (
+                <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md animate-pulse">
+                  {likedItems.length}
+                </span>
+              )}
             </Link>
-
-            {/* <select className="w-24 p-2 rounded-xl shadow-md border border-gray-300 bg-[#A17F4A] text-white focus:outline-none focus:ring-2 focus:ring-[#A17F4A] cursor-pointer">
-              <option value="End">Eng</option>
-              <option value="Ru">Ru</option>
-              <option value="Uz">Uz</option>
-            </select> */}
           </div>
         </div>
       )}
