@@ -3,3 +3,10 @@
 *{
     font-family: "DM Sans", sans-serif;
 }
+
+@media (max-width: 1227px) {
+    .show-after-1228 {
+      display: none;
+    }
+  }
+  

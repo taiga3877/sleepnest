@@ -224,29 +224,36 @@ const HomePage = () => {
         <br />
         <br />
         <br />
-        <div className="flex items-center justify-between hover:shadow-2xl bg-[#464351] text-white rounded-3xl p-6 lg:p-[40px] h-auto relative">
-          <div className="w-full sm:w-[350px] text-left p-6 lg:p-[40px]">
-            <h1 className="text-[60px] sm:text-[90px] font-semibold">100%</h1>
-            <p className="text-xl sm:text-2xl">Material quality</p>
-          </div>
-          <img
-  className="hidden sm:block w-full sm:w-[500px] md:w-[800px] h-auto absolute sm:left-[100px] md:left-[120px] top-1/2 transform -translate-y-1/2"
+    <div className="flex flex-col sm:flex-row items-center justify-between hover:shadow-2xl bg-[#464351] text-white rounded-3xl p-6 lg:p-[40px] h-auto relative gap-6 md:gap-12">
+    <div className="w-full sm:w-[350px] text-left p-6 lg:p-[40px]">
+      <h1 className="text-[60px] sm:text-[90px] font-semibold">100%</h1>
+      <p className="text-xl sm:text-2xl">Material quality</p>
+    </div>
+
+    <img
+  className="show-after-1228 w-full sm:w-[500px] md:w-[800px] h-auto absolute sm:left-[100px] md:left-[100px] top-1/2 transform -translate-y-1/2"
   src={img2}
   alt=""
 />
 
-          <div className="w-full sm:w-[500px] p-6">
-            <h1 className="text-[24px] sm:text-[30px] font-semibold p-[10px]">
-              "Ecologically Clean Sleep Products"
-            </h1>
-            <p className="text-[14px] sm:text-[16px] p-[10px]">
-              has been a company producing cotton fabrics for use all over the world for many years
-            </p>
-            <button className="w-[128px] h-[38px] p-[10px] bg-white text-black rounded-2xl hover:bg-black hover:text-white transition-colors duration-300">
-              Collection
-            </button>
-          </div>
-        </div>
+
+    <div className="w-full sm:w-[500px] p-6 sm:p-[10px]">
+      <h1 className="text-[24px] sm:text-[30px] font-semibold p-[10px]">
+        "Ecologically Clean Sleep Products"
+      </h1>
+      <p className="text-[14px] sm:text-[16px] p-[10px]">
+        has been a company producing cotton fabrics for use all over the world for many years
+      </p>
+      <Link to={'/collectionpage'}>
+        <button className="w-[128px] h-[38px] p-[10px] bg-white text-black rounded-2xl hover:bg-black hover:text-white transition-colors duration-300">
+          Collection
+        </button>
+      </Link>
+    </div>
+  </div>
+
+
+
 
         <br />
         <br />
@@ -304,7 +311,7 @@ const HomePage = () => {
             <p className="text-xl sm:text-2xl">Material quality</p>
           </div>
           <img
-  className="hidden sm:block w-full sm:w-[500px] md:w-[800px] h-auto absolute sm:left-[100px] md:left-[100px] top-1/2 transform -translate-y-1/2"
+  className="show-after-1228 w-full sm:w-[500px] md:w-[800px] h-auto absolute sm:left-[100px] md:left-[100px] top-1/2 transform -translate-y-1/2"
   src={img3}
   alt=""
 />
@@ -379,7 +386,7 @@ const HomePage = () => {
             <p className="text-xl sm:text-2xl">Material quality</p>
           </div>
           <img
-  className="hidden sm:block w-full sm:w-[500px] md:w-[800px] h-auto absolute sm:left-[100px] md:left-[100px] top-1/2 transform -translate-y-1/2"
+  className="show-after-1228 w-full sm:w-[500px] md:w-[800px] h-auto absolute sm:left-[100px] md:left-[100px] top-1/2 transform -translate-y-1/2"
   src={img4}
   alt=""
 />
