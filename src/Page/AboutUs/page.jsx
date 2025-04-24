@@ -40,7 +40,7 @@ const AboutUs = () => {
     ];
 
     return (
-        <div className="w-full py-12 bg-gray-100">
+        <div className="w-full py-12   bg-gray-100">
             <br />
             <br />
             <br />
